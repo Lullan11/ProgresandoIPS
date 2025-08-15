@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+}
+
+/* Logo */
+.img-logoIPS {
+    max-height: 90px;
+    padding: 10px 20px;
+}
+
+
+
+/* Navegación moderna */
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    position: relative;
+}
+
+li a {
+    display: block;
+    color: #639A33;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    position: relative;
+    background: linear-gradient(to right, #0A5F36);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.4s ease;
+}
+
+/* Efecto hover degradado de izquierda a derecha */
+li a:hover {
+    background-size: 100% 100%;
+    color: #fff;
+    border-radius: 4px;
+}
+
+/* Sombra al pasar */
+li a:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.titulo-seccion {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #0A5F36;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+
+
+
+/* Pie de pagina, por ahora */
+footer {
+    background: linear-gradient(to right, #0A5F36, #639A33);
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    margin-top: 40px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+}
+
+footer p {
+    margin: 0;
+}
