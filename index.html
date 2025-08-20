@@ -10,85 +10,83 @@
 </head>
 
 <body>
-
-
     <div class="pequeño-header">
         <p><strong><em>CON NOSOTROS TU SALUD SIEMPRE ESTA SEGURA</em></strong></p>
     </div>
-    <!-- cabeza de pagina -->
+    
     <header>
-        <!-- barra de navegacion -->
         <nav>
             <img class="img-logoIPS" src="img/LOGOIPS.png" alt="Logo IPS">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="quienes_somos.html">Quiénes somos</a></li>
+                <li><a href="#quieneSomos">Quiénes somos</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="contacto.html">Sedes</a></li>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="quienes_somos.html">Quiénes somos</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-
-
-    <!-- cuerpo de pagina -->
     <main>
-        <section>
-            <h1>Bienvenidos a Progresando en salud</h1>
-            <p>En Progresando en salud, nos dedicamos a brindar atención médica de calidad y servicios de salud
-                integrales para toda la familia. Nuestro equipo de profesionales está comprometido con tu bienestar y el
-                de tus seres queridos.</p>
-            <p>Ofrecemos una amplia gama de servicios, desde consultas médicas generales hasta especialidades, exámenes
-                diagnósticos y programas de prevención. Nuestra misión es mejorar la salud y la calidad de vida de
-                nuestros pacientes a través de un enfoque centrado en la persona.</p>
-            <p>Explora nuestro sitio web para conocer más sobre nuestros servicios, nuestro equipo y cómo podemos
-                ayudarte a alcanzar tus objetivos de salud. ¡Estamos aquí para apoyarte en cada paso del camino hacia
-                una vida más saludable!</p>
+        <section class="video-section">
+            <video autoplay muted loop playsinline>
+                <source src="img/Video_fondo.mp4" type="video/mp4">
+                Tu navegador no soporta videos HTML5.
+            </video>
+
+            <div class="overlay"></div>
+
+            <div class="video-content">
+                <h1>Bienvenidos a Progresando en salud</h1>
+                <p>En Progresando en salud, nos dedicamos a brindar atención médica de calidad y servicios de salud integrales para toda la familia.</p>
+                <p>Ofrecemos una amplia gama de servicios, desde consultas médicas generales hasta especialidades, exámenes diagnósticos y programas de prevención.</p>
+                <button class="btn-leer-mas">Leer mas</button>
+            </div>
         </section>
 
-        <section  class="titulo-seccion">
-            <h2>SOBRE <span>NOSOTROS</span></h2>
-            <p>SOMOS un grupo especializado en prestar servicios de seguridad y salud en el trabajo, fundamentados en la
-                prevención de enfermedades y accidentes laborales, brindamos servicios a las empresas públicas y
-                privadas de la región.
-            </p>
-        </section>
+        <section id="quieneSomos" class="sobre-nosotros">
+            <div class="contenedor-seccion">
+                <div class="texto">
+                    <h2>QUIÉNES SOMOS</h2>
+                    <p>SOMOS un grupo especializado en prestar servicios de seguridad y salud en el trabajo, fundamentados en la prevención de enfermedades y accidentes laborales...</p>
 
-        <section>
-            <h2 class="titulo-seccion">MISIÓN</h2>
-            <p>Somos una empresa especializada en servicios de salud ocupacional, orientados a la seguridad y salud en
-                el trabajo mediante procesos confiables y seguros, con un eficiente servicio y calidad para mantener las
-                condiciones generales de salud de los trabajadores de las empresas de la región y del país.
-            </p>
-        </section>
+                    <h2>MISIÓN</h2>
+                    <p>Somos una empresa especializada en servicios de salud ocupacional, orientados a la seguridad y salud en el trabajo mediante procesos confiables y seguros...</p>
 
-        <section>
-            <h2 class="titulo-seccion">VISIÓN</h2>
-            <p>Posicionarnos como una empresa líder en la prestación de servicios de seguridad y salud en el trabajo, a
-                través de la calidad, brindando un servicio confiable para ser una empresa rentable y sostenible.
-            </p>
-        </section>
+                    <h2>VISIÓN</h2>
+                    <p>Posicionarnos como una empresa líder en la prestación de servicios de seguridad y salud en el trabajo, a través de la calidad...</p>
 
-        <section>
-            <h2 class="titulo-seccion">VALORES</h2>
-            <p>Compromiso, Ética, Integridad, Eficiencia, Respeto y Trabajo en Equipo.
-            </p>
-        </section>
+                    <h2>VALORES</h2>
+                    <p>Compromiso, Ética, Integridad, Eficiencia, Respeto y Trabajo en Equipo.</p>
+                </div>
 
+                <div class="carrusel-container">
+                    <div class="carrusel">
+                        <div class="carrusel-slide active">
+                            <img src="img/1.jpg" alt="Imagen 1">
+                        </div>
+                        <div class="carrusel-slide">
+                            <img src="img/2.jpg" alt="Imagen 2">
+                        </div>
+                        <div class="carrusel-slide">
+                            <img src="img/3.jpg" alt="Imagen 3">
+                        </div>
+                    </div>
+                    <button class="carrusel-control prev">&#10094;</button>
+                    <button class="carrusel-control next">&#10095;</button>
+                    <div class="carrusel-indicadores">
+                        <span class="indicador active" data-index="0"></span>
+                        <span class="indicador" data-index="1"></span>
+                        <span class="indicador" data-index="2"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-
-
-
-
-    <!-- pie de pagina -->
     <footer>
         <p>&copy; 2025 IPS Progresando en salud SAS. Todos los derechos reservados.</p>
     </footer>
-</body>
 
+    <script src="js/script.js"></script>
+</body>
 </html>
