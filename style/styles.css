@@ -113,7 +113,7 @@ nav li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #11641e60;
+    /* background: #639a33e6; */
     z-index: 1;
 }
 
@@ -127,13 +127,14 @@ nav li a:hover {
     margin: 0 auto;
     padding: 20px;
     padding-top: 80px;
+    background-color: #639a33fa;
 }
 
 .video-section h1 {
     font-size: 2.5rem;
     margin-bottom: 30px;
     font-weight: bold;
-    color: #639A33;
+    color: white;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
@@ -166,16 +167,16 @@ nav li a:hover {
     color: white;
 }
 
-/* Sección sobre nosotros - CONTENEDOR PRINCIPAL CORREGIDO */
+/* Sección sobre nosotros - MÁS ESPACIADO */
 .sobre-nosotros {
-    padding: 60px 10%;
+    padding: 80px 10%; /* Aumentado el padding vertical */
 }
 
 .contenedor-seccion {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 40px;
+    gap: 50px; /* Aumentado el gap */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -184,12 +185,13 @@ nav li a:hover {
 .texto {
     flex: 1;
     min-width: 0;
+    padding: 30px 0; /* Más espacio interno */
 }
 
 .texto h2 {
     color: #0A5F36;
-    margin-bottom: 10px;
-    margin-top: 25px;
+    margin-bottom: 15px; /* Más espacio entre títulos */
+    margin-top: 30px;
 }
 
 .texto h2:first-child {
@@ -197,21 +199,27 @@ nav li a:hover {
 }
 
 .texto p {
-    margin-bottom: 20px;
-    line-height: 1.6;
+    margin-bottom: 25px; /* Más espacio entre párrafos */
+    line-height: 1.7; /* Mejor interlineado */
     color: #333;
+    font-size: 1.1rem; /* Texto ligeramente más grande */
 }
 
-/* ESTILOS DEL CARRUSEL - POSICIONADO A LA DERECHA */
+/* ESTILOS DEL CARRUSEL - MÁS ALTO Y MEJOR AJUSTE DE IMAGEN */
+/* ... (todo el CSS anterior se mantiene igual) ... */
+/* ... (mantener todo el CSS anterior) ... */
+
+/* ESTILOS DEL CARRUSEL - CORREGIDOS */
 .carrusel-container {
     flex: 1;
     min-width: 0;
     position: relative;
     overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    height: 400px;
-    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    height: 550px;
+    max-width: 520px;
+    margin: 30px 0;
 }
 
 .carrusel {
@@ -227,8 +235,9 @@ nav li a:hover {
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
     transform: translateX(100%);
+    z-index: 1;
 }
 
 .carrusel-slide.active {
@@ -237,76 +246,82 @@ nav li a:hover {
     z-index: 2;
 }
 
-.carrusel-slide.prev {
-    transform: translateX(-100%);
-    opacity: 0;
-}
-
-.carrusel-slide.next {
-    transform: translateX(100%);
-    opacity: 0;
-}
-
+/* MEJOR AJUSTE DE IMAGEN */
 .carrusel-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+    background-color: #f5f5f5;
 }
 
-/* Controles del carrusel */
+/* ... (el resto del CSS se mantiene igual) ... */
+
+/* ... (el resto del CSS se mantiene igual) ... */
+
+/* Controles del carrusel - MÁS GRANDES Y MEJOR POSICIONADOS */
 .carrusel-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(10, 95, 54, 0.7);
+    background-color: rgba(10, 95, 54, 0.8);
     color: white;
     border: none;
-    padding: 15px;
+    padding: 18px; /* Más grandes */
     cursor: pointer;
     z-index: 3;
-    font-size: 20px;
-    transition: background-color 0.3s ease;
+    font-size: 24px; /* Más grandes */
+    transition: all 0.3s ease;
     border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .carrusel-control:hover {
-    background-color: rgba(10, 95, 54, 0.9);
+    background-color: rgba(10, 95, 54, 1);
+    transform: translateY(-50%) scale(1.1);
 }
 
 .carrusel-control.prev {
-    left: 15px;
+    left: 20px;
 }
 
 .carrusel-control.next {
-    right: 15px;
+    right: 20px;
 }
 
-/* Indicadores del carrusel */
+/* Indicadores del carrusel - MÁS SEPARADOS */
 .carrusel-indicadores {
     position: absolute;
-    bottom: 15px;
+    bottom: 25px; /* Más abajo */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 10px;
+    gap: 15px; /* Más separados */
     z-index: 3;
 }
 
 .indicador {
-    width: 12px;
-    height: 12px;
+    width: 14px; /* Más grandes */
+    height: 14px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.6);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .indicador.active {
     background-color: #0A5F36;
+    transform: scale(1.2);
 }
 
 .indicador:hover {
-    background-color: rgba(10, 95, 54, 0.7);
+    background-color: rgba(10, 95, 54, 0.8);
+    border-color: white;
 }
 
 /* Pie de pagina */
@@ -314,11 +329,11 @@ footer {
     background: linear-gradient(to right, #0A5F36, #639A33);
     color: white;
     text-align: center;
-    padding: 15px 10px;
+    padding: 20px 10px; /* Más padding */
     font-size: 0.9rem;
     letter-spacing: 0.5px;
-    margin-top: 40px;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    margin-top: 60px; /* Más espacio arriba */
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
 }
 
 footer p {
@@ -327,14 +342,23 @@ footer p {
 
 /* Responsive */
 @media (max-width: 900px) {
+    .sobre-nosotros {
+        padding: 60px 5%; /* Ajuste responsive */
+    }
+    
     .contenedor-seccion {
         flex-direction: column;
+        gap: 30px;
+    }
+    
+    .texto {
+        padding: 20px 0;
     }
     
     .carrusel-container {
         max-width: 100%;
-        height: 300px;
-        margin-top: 30px;
+        height: 400px; /* Altura mantenida en móvil */
+        margin: 20px 0;
     }
     
     nav ul {
@@ -356,7 +380,13 @@ footer p {
     }
     
     .carrusel-control {
-        padding: 10px;
-        font-size: 16px;
+        padding: 12px;
+        font-size: 18px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carrusel-indicadores {
+        bottom: 15px;
     }
 }

@@ -4,66 +4,78 @@ document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.carrusel-slide');
     const prevBtn = document.querySelector('.carrusel-control.prev');
     const nextBtn = document.querySelector('.carrusel-control.next');
-    const indicadores = document.querySelectorAll('.indicador');
+    const indicadoresContainer = document.querySelector('.carrusel-indicadores');
     
     let currentIndex = 0;
-    let isTransitioning = false;
-    
+    let totalSlides = slides.length;
+    let carruselInterval;
+
+    // Función para crear indicadores dinámicamente
+    function crearIndicadores() {
+        indicadoresContainer.innerHTML = ''; // Limpiar indicadores existentes
+        
+        for (let i = 0; i < totalSlides; i++) {
+            const indicador = document.createElement('span');
+            indicador.className = 'indicador';
+            indicador.setAttribute('data-index', i);
+            if (i === 0) indicador.classList.add('active');
+            
+            indicador.addEventListener('click', () => {
+                showSlide(i);
+            });
+            
+            indicadoresContainer.appendChild(indicador);
+        }
+    }
+
     // Función para mostrar slide específico
     function showSlide(index) {
-        if (isTransitioning) return;
+        if (index === currentIndex) return;
         
-        isTransitioning = true;
-        
-        // Remover clases activas
+        // Remover clases activas de slides
         slides.forEach(slide => {
             slide.classList.remove('active', 'prev', 'next');
         });
-        indicadores.forEach(ind => ind.classList.remove('active'));
-        
-        // Calcular índices anterior y siguiente
-        const prevIndex = (index - 1 + slides.length) % slides.length;
-        const nextIndex = (index + 1) % slides.length;
-        
-        // Aplicar clases
-        slides[prevIndex].classList.add('prev');
-        slides[index].classList.add('active');
-        slides[nextIndex].classList.add('next');
         
         // Actualizar indicadores
-        indicadores[index].classList.add('active');
+        const indicadores = document.querySelectorAll('.indicador');
+        indicadores.forEach(ind => ind.classList.remove('active'));
+        
+        // Aplicar clases al slide activo
+        slides[index].classList.add('active');
+        
+        // Actualizar indicador activo
+        if (indicadores[index]) {
+            indicadores[index].classList.add('active');
+        }
         
         currentIndex = index;
         
-        // Permitir nuevas transiciones después de un breve delay
-        setTimeout(() => {
-            isTransitioning = false;
-        }, 500);
+        // Reiniciar el auto-avance
+        reiniciarAutoAvance();
     }
     
     // Función para siguiente slide
     function nextSlide() {
-        showSlide((currentIndex + 1) % slides.length);
+        const nextIndex = (currentIndex + 1) % totalSlides;
+        showSlide(nextIndex);
     }
     
     // Función para slide anterior
     function prevSlide() {
-        showSlide((currentIndex - 1 + slides.length) % slides.length);
+        const prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        showSlide(prevIndex);
     }
     
+    // Función para reiniciar el auto-avance
+    function reiniciarAutoAvance() {
+        clearInterval(carruselInterval);
+        carruselInterval = setInterval(nextSlide, 4000); // 4 segundos
+    }
+
     // Event listeners para controles
     nextBtn.addEventListener('click', nextSlide);
     prevBtn.addEventListener('click', prevSlide);
-    
-    // Event listeners para indicadores
-    indicadores.forEach((indicador, index) => {
-        indicador.addEventListener('click', () => {
-            showSlide(index);
-        });
-    });
-    
-    // Auto avanzar el carrusel cada 5 segundos
-    let carruselInterval = setInterval(nextSlide, 5000);
     
     // Pausar el carrusel cuando el mouse está sobre él
     carrusel.addEventListener('mouseenter', () => {
@@ -72,11 +84,66 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Reanudar el carrusel cuando el mouse sale
     carrusel.addEventListener('mouseleave', () => {
-        carruselInterval = setInterval(nextSlide, 5000);
+        reiniciarAutoAvance();
     });
     
+    // Navegación con teclado
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+    });
+    
+    // Touch events para dispositivos móviles
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carrusel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        clearInterval(carruselInterval); // Pausar al tocar
+    });
+    
+    carrusel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        reiniciarAutoAvance(); // Reanudar después de swipe
+    });
+    
+    function handleSwipe() {
+        const minSwipeDistance = 50;
+        
+        if (touchEndX < touchStartX && touchStartX - touchEndX > minSwipeDistance) {
+            nextSlide(); // Swipe izquierda
+        }
+        
+        if (touchEndX > touchStartX && touchEndX - touchStartX > minSwipeDistance) {
+            prevSlide(); // Swipe derecha
+        }
+    }
+    
     // Inicializar el carrusel
-    showSlide(0);
+    function inicializarCarrusel() {
+        totalSlides = document.querySelectorAll('.carrusel-slide').length;
+        
+        if (totalSlides === 0) return;
+        
+        // Crear indicadores dinámicamente
+        crearIndicadores();
+        
+        // Mostrar solo el primer slide inicialmente
+        slides.forEach((slide, index) => {
+            if (index === 0) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
+        });
+        
+        // Iniciar auto-avance
+        reiniciarAutoAvance();
+    }
+    
+    // Inicializar
+    inicializarCarrusel();
     
     // Navegación suave para enlaces internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
