@@ -162,4 +162,47 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Función para hacer la navegación fija con efecto al hacer scroll
+    function setupFixedNavigation() {
+        const header = document.querySelector('header');
+        const pequeñoHeader = document.querySelector('.pequeño-header');
+        const mainContent = document.querySelector('main');
+        
+        if (!header || !pequeñoHeader) return;
+        
+        let lastScrollTop = 0;
+        const headerHeight = header.offsetHeight;
+        const pequeñoHeaderHeight = pequeñoHeader.offsetHeight;
+        
+        // Ajustar el margen superior del contenido principal
+        if (mainContent) {
+            mainContent.style.marginTop = (headerHeight + pequeñoHeaderHeight) + 'px';
+        }
+        
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Efecto de sombra al hacer scroll
+            if (scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Ocultar/mostrar header al hacer scroll (opcional)
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scroll hacia abajo - ocultar header
+                header.style.top = '-80px';
+            } else {
+                // Scroll hacia arriba - mostrar header
+                header.style.top = pequeñoHeaderHeight + 'px';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    }
+    
+    // Configurar navegación fija
+    setupFixedNavigation();
 });
