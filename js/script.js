@@ -206,73 +206,40 @@ document.addEventListener('DOMContentLoaded', function () {
     // Configurar navegación fija
     setupFixedNavigation();
 
+    // Función SERVICIOS
+    const explorarBtn = document.getElementById('explorarServicios');
+    const serviciosSection = document.getElementById('serviciosSection');
+    const verTodosBtn = document.getElementById('verTodosServicios');
+    let serviciosVisibles = false;
 
-
-    // servicios
-
-    document.addEventListener('DOMContentLoaded', function () {
-        const verTodosBtn = document.getElementById('verTodosServicios');
-        const serviciosSection = document.getElementById('serviciosSection');
-        const serviciosGrid = document.getElementById('serviciosGrid');
-        const hiddenServices = document.querySelectorAll('.hidden-service');
-        let todosVisible = false;
-
-        // Mostrar la sección de servicios (puedes cambiar esto según cómo quieras activarla)
-        serviciosSection.classList.add('visible');
-
-        verTodosBtn.addEventListener('click', function () {
-            if (!todosVisible) {
-                // Mostrar todos los servicios
-                hiddenServices.forEach(service => {
-                    service.style.display = 'block';
-                });
-
-                // Cambiar el texto del botón
-                verTodosBtn.querySelector('span').textContent = 'Mostrar menos servicios';
-                verTodosBtn.querySelector('i').classList.replace('fa-chevron-down', 'fa-chevron-up');
-
-                todosVisible = true;
-            } else {
-                // Ocultar servicios adicionales
-                hiddenServices.forEach(service => {
-                    service.style.display = 'none';
-                });
-
-                // Cambiar el texto del botón
-                verTodosBtn.querySelector('span').textContent = 'Ver todos los servicios';
-                verTodosBtn.querySelector('i').classList.replace('fa-chevron-up', 'fa-chevron-down');
-
-                todosVisible = false;
-
-                // Desplazarse hacia la sección de servicios
-                serviciosSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-
-        // Ejemplo de cómo podrías agregar más servicios dinámicamente
-        function agregarServicio(titulo, descripcion, icono, sede) {
-            const nuevoServicio = document.createElement('div');
-            nuevoServicio.className = 'servicios-item hidden-service';
-            nuevoServicio.style.display = 'none'; // Oculto inicialmente
-
-            nuevoServicio.innerHTML = `
-            <div class="servicios-icon">
-                <i class="${icono}"></i>
-            </div>
-            <h3>${titulo}</h3>
-            <p>${descripcion}</p>
-            <p class="disponible-sede">Disponible en: ${sede}</p>
-        `;
-
-            serviciosGrid.appendChild(nuevoServicio);
-
-            // Si todos los servicios están visibles, mostrar este también
-            if (todosVisible) {
-                nuevoServicio.style.display = 'block';
-            }
+    // Función para alternar la visibilidad de los servicios
+    function toggleServicios() {
+        if (!serviciosVisibles) {
+            // Mostrar servicios
+            serviciosSection.classList.add('visible');
+            serviciosSection.scrollIntoView({ behavior: 'smooth' });
+            explorarBtn.querySelector('span').textContent = 'Ocultar servicios';
+            explorarBtn.querySelector('i').classList.replace('fa-chevron-down', 'fa-chevron-up');
+        } else {
+            // Ocultar servicios
+            serviciosSection.classList.remove('visible');
+            document.querySelector('.servicios-hero').scrollIntoView({ behavior: 'smooth' });
+            explorarBtn.querySelector('span').textContent = 'Explorar servicios';
+            explorarBtn.querySelector('i').classList.replace('fa-chevron-up', 'fa-chevron-down');
         }
+        serviciosVisibles = !serviciosVisibles;
+    }
 
-        // Ejemplo de cómo agregar un nuevo servicio:
-        // agregarServicio('Nuevo Servicio', 'Descripción del nuevo servicio', 'fas fa-new-icon', 'sede principal');
-    });
+    // Event listener para el botón de explorar/ocultar
+    if (explorarBtn) {
+        explorarBtn.addEventListener('click', toggleServicios);
+    }
+
+    // Función para el botón "Ver todos los servicios"
+    if (verTodosBtn) {
+        verTodosBtn.addEventListener('click', function () {
+            // Aquí puedes redirigir a otra página o interfaz
+            window.location.href = 'todosServicios.html';
+        });
+    }
 });
