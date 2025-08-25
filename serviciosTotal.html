@@ -1,12 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todos los serivicios</title>
-    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="style/serviciosTotal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    
+    <div class="pequeño-header">
+        <p><strong><em>CON NOSOTROS TU SALUD SIEMPRE ESTA SEGURA</em></strong></p>
+    </div>
+
+    <header>
+        <nav>
+            <img class="img-logoIPS" src="img/LOGOIPS.png" alt="Logo IPS">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#quieneSomos">Quiénes somos</a></li>
+                <li><a href="index.html#sedes">Sedes</a></li>
+                <li><a href="#ofrecemos">Servicios</a></li>
+                <li><a href="index.html">No se</a></li>
+                <li><a href="index.html#quieneSomos">Contacto</a></li>
+                <li><a href="servicios.html">Estados financieros</a></li>
+                <li><a href="https://progresandoweb.com/index.php/login">Progresando Web</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="section-header">
+        <h2>Nuestros servicios</h2>
+        <p>Conoce nuestros servicios y horarios de atención</p>
+    </div>
+    <div class="servicios-grid">
+        <!-- Servicios -->
+        <div class="servicio-card">
+            <div class="servicio-icon">
+                <i class="fas fa-eye"></i>
+            </div>
+            <h3>Optometría</h3>
+            <p>Dispositivos inteligentes para monitoreo de condiciones ambientales y factores de riesgo.</p>
+            <div class="disponible-sede">
+                <span>- Disponible en:</span>
+                <ul>
+                    <li>Cúcuta</li>
+                    <li>Ocaña</li>
+                    <li>Villa del Rosario</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="servicio-card">
+            <div class="servicio-icon">
+                <i class="fas fa-deaf"></i>
+            </div>
+            <h3>Audiometría</h3>
+            <p>Algoritmos predictivos para identificación temprana de riesgos y enfermedades laborales.</p>
+            <div class="disponible-sede">
+                <span>- Disponible en:</span>
+                <ul>
+                    <li>Cúcuta</li>
+                    <li>Ocaña</li>
+                    <li>Villa del Rosario</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="servicio-card">
+            <div class="servicio-icon">
+                <i class="fas fa-lungs"></i>
+            </div>
+            <h3>Espirometría</h3>
+            <p>Análisis de grandes volúmenes de datos para mejorar programas de salud ocupacional.</p>
+            <div class="disponible-sede">
+                <span>- Disponible en:</span>
+                <ul>
+                    <li>Cúcuta</li>
+                    <li>Ocaña</li>
+                    <li>Villa del Rosario</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="servicio-card">
+            <div class="servicio-icon">
+                <i class="fas fa-heartbeat"></i>
+            </div>
+            <h3>Cardiología</h3>
+            <p>Evaluaciones cardíacas completas para el cuidado de la salud cardiovascular.</p>
+            <div class="disponible-sede">
+                <span>- Disponible en:</span>
+                <ul>
+                    <li>Cúcuta</li>
+                    <li>Ocaña</li>
+                    <li>Villa del Rosario</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="servicio-card">
+            <div class="servicio-icon">
+                <i class="fas fa-brain"></i>
+            </div>
+            <h3>Neurología</h3>
+            <p>Estudios especializados para evaluar el sistema nervioso y función cerebral.</p>
+            <div class="disponible-sede">
+                <span>- Disponible en:</span>
+                <ul>
+                    <li>Cúcuta</li>
+                    <li>Ocaña</li>
+                    <li>Villa del Rosario</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="servicio-card">
+            <div class="servicio-icon">
+                <i class="fas fa-lungs"></i>
+            </div>
+            <h3>Neumología</h3>
+            <p>Evaluación y tratamiento de enfermedades del sistema respiratorio.</p>
+            <div class="disponible-sede">
+                <span>- Disponible en:</span>
+                <ul>
+                    <li>Cúcuta</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 IPS Progresando en salud SAS. Todos los derechos reservados.</p>
+    </footer>
+    <script src="js/script.js"></script>
+
+    <script>
+        // JavaScript para el efecto de sombra al hacer scroll
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
+
 </html>

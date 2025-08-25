@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (verTodosBtn) {
         verTodosBtn.addEventListener('click', function () {
             // Aquí puedes redirigir a otra página o interfaz
-            window.location.href = 'todosServicios.html';
+            window.location.href = 'serviciosTotal.html';
         });
     }
 });

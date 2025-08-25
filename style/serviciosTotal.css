@@ -1,0 +1,347 @@
+/* ESTILOS GENERALES */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+}
+
+hr {
+    background-color: #639A33;
+}
+
+.pequeño-header {
+    background-color: #639A33;
+    color: white;
+    text-align: center;
+    padding: 8px 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.pequeño-header p {
+    margin: 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* Header FIJADO - SIN SOMBRA INICIAL */
+header {
+    width: 100%;
+    position: fixed;
+    top: 33px;
+    left: 0;
+    z-index: 1000;
+    background: white;
+    /* Quitamos la sombra inicial */
+    transition: top 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Navegación */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 11px 40px;
+    width: 100%;
+}
+
+/* Logo */
+.img-logoIPS {
+    max-height: 70px;
+}
+
+/* Menú */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    position: relative;
+}
+
+nav li a {
+    display: block;
+    color: #639A33;
+    padding: 15px 10px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Línea debajo animada */
+nav li a::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #0A5F36;
+    transition: width 0.3s ease;
+}
+
+nav li a:hover::after {
+    width: 100%;
+}
+
+nav li a:hover {
+    color: #0A5F36;
+}
+
+main {
+    margin-top: 120px;
+}
+
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 100px;
+    padding: 0 20px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #0A5F36;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0A5F36, #639A33);
+    border-radius: 2px;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* CONTENIDO PRINCIPAL */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.servicio-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(99, 154, 51, 0.1);
+}
+
+.servicio-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #0A5F36, #639A33);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(99, 154, 51, 0.2);
+}
+
+.servicio-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Iconos en forma de círculo */
+.servicio-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #0A5F36, #639A33);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.servicio-card:hover .servicio-icon {
+    transform: rotate(10deg) scale(1.1);
+    box-shadow: 0 5px 15px rgba(10, 95, 54, 0.3);
+}
+
+.servicio-icon::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 2px solid rgba(99, 154, 51, 0.3);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+}
+
+.servicio-card h3 {
+    font-size: 1.5rem;
+    color: #0A5F36;
+    margin-bottom: 15px;
+}
+
+.servicio-card p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.disponible-sede {
+    font-style: italic;
+    color: #0A5F36;
+    font-weight: 500;
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.disponible-sede span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.disponible-sede ul {
+    list-style: none;
+    margin: 5px 0 0;
+    padding: 0;
+}
+
+.disponible-sede li {
+    margin: 3px 0;
+    font-size: 0.95rem;
+}
+
+/* Pie de pagina */
+footer {
+    background: linear-gradient(to right, #0A5F36, #639A33);
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    margin-top: 60px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Efecto de sombra cuando se hace scroll */
+header.scrolled {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    body {
+        padding-top: 110px;
+    }
+
+    nav {
+        padding: 10px 20px;
+    }
+
+    nav ul {
+        gap: 8px;
+    }
+
+    nav li a {
+        padding: 10px 8px;
+        font-size: 0.9rem;
+    }
+
+    .servicios-grid {
+        grid-template-columns: 1fr;
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    .servicio-card {
+        padding: 20px;
+    }
+
+    .servicio-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+
+    .servicio-icon::after {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav ul {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .img-logoIPS {
+        margin-bottom: 10px;
+    }
+}
