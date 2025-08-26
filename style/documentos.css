@@ -83,6 +83,11 @@ header {
     transition: top 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efecto de sombra cuando se hace scroll - SOLO AL HACER SCROLL */
+header.scrolled {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
 /* Navegación */
 nav {
     display: flex;
@@ -225,138 +230,6 @@ nav li a.progressando-btn:hover {
 
 
 
-
-/* CONTENIDO PRINCIPAL */
-.servicios-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-.servicio-card {
-    background: white;
-    border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(99, 154, 51, 0.1);
-}
-
-.servicio-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, #0A5F36, #639A33);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-
-.servicio-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(99, 154, 51, 0.2);
-}
-
-.servicio-card:hover::before {
-    transform: scaleX(1);
-}
-
-
-/* Iconos en forma de círculo */
-.servicio-icon {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 20px;
-    background: linear-gradient(135deg, #0A5F36, #639A33);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 2.5rem;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.servicio-card:hover .servicio-icon {
-    transform: rotate(10deg) scale(1.1);
-    box-shadow: 0 5px 15px rgba(10, 95, 54, 0.3);
-}
-
-.servicio-icon::after {
-    content: '';
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    border: 2px solid rgba(99, 154, 51, 0.3);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(0.8);
-        opacity: 0.7;
-    }
-
-    50% {
-        transform: scale(1);
-        opacity: 0.3;
-    }
-
-    100% {
-        transform: scale(0.8);
-        opacity: 0.7;
-    }
-}
-
-.servicio-card h3 {
-    font-size: 1.5rem;
-    color: #0A5F36;
-    margin-bottom: 15px;
-}
-
-.servicio-card p {
-    color: #666;
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
-.disponible-sede {
-    font-style: italic;
-    color: #0A5F36;
-    font-weight: 500;
-    margin-top: 15px;
-    border-top: 1px solid #eee;
-    padding-top: 10px;
-    text-align: center;
-}
-
-.disponible-sede span {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.disponible-sede ul {
-    list-style: none;
-    margin: 5px 0 0;
-    padding: 0;
-}
-
-.disponible-sede li {
-    margin: 3px 0;
-    font-size: 0.95rem;
-}
-
 /* Pie de pagina */
 footer {
     background: linear-gradient(to right, #0A5F36, #639A33);
@@ -372,64 +245,181 @@ footer p {
     margin: 0;
 }
 
-/* Efecto de sombra cuando se hace scroll */
-header.scrolled {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+
+
+
+
+/* ESTILOS PARA SECCIÓN DE DOCUMENTOS - DISEÑO ELEGANTE Y PROFESIONAL */
+.documentos-section {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 30px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    body {
-        padding-top: 110px;
-    }
+.documentos-section > div {
+    background: white;
+    border-radius: 12px;
+    padding: 35px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(10, 95, 54, 0.08);
+    border: 1px solid #e8f5e8;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    nav {
-        padding: 10px 20px;
-    }
+.documentos-section > div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(10, 95, 54, 0.12);
+}
 
-    nav ul {
-        gap: 8px;
-    }
+.documentos-section h3 {
+    color: #0A5F36;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e0efe0;
+    text-align: center;
+    font-weight: 600;
+}
 
-    nav li a {
-        padding: 10px 8px;
-        font-size: 0.9rem;
-    }
+.documentos-section a {
+    display: flex;
+    align-items: center;
+    background: #f9fbf9;
+    color: #2c3e50;
+    text-decoration: none;
+    padding: 14px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border-left: 3px solid #639A33;
+}
 
-    .servicios-grid {
-        grid-template-columns: 1fr;
-        margin: 20px auto;
+.documentos-section a:hover {
+    background: #edf7ed;
+    color: #0A5F36;
+    transform: translateX(5px);
+}
+
+.documentos-section a::before {
+    content: '📄';
+    margin-right: 12px;
+    font-size: 1.1rem;
+}
+
+/* Efecto sutil al pasar el mouse */
+.documentos-section a::after {
+    content: '→';
+    margin-left: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    color: #639A33;
+}
+
+.documentos-section a:hover::after {
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+/* Separador entre enlaces */
+.documentos-section a:not(:last-child) {
+    border-bottom: 1px solid #f0f7f0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .documentos-section {
+        padding: 0 20px;
+        margin: 40px auto;
+    }
+    
+    .documentos-section > div {
+        padding: 25px 20px;
+    }
+    
+    .documentos-section h3 {
+        font-size: 1.4rem;
+    }
+    
+    .documentos-section a {
+        padding: 12px 16px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .documentos-section {
         padding: 0 15px;
+        margin: 30px auto;
     }
-
-    .servicio-card {
-        padding: 20px;
+    
+    .documentos-section > div {
+        padding: 20px 15px;
     }
-
-    .servicio-icon {
-        width: 80px;
-        height: 80px;
-        font-size: 2rem;
+    
+    .documentos-section h3 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
     }
-
-    .servicio-icon::after {
-        width: 100px;
-        height: 100px;
+    
+    .documentos-section a {
+        padding: 10px 14px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .documentos-section a::after {
+        margin-top: 5px;
+        margin-left: 0;
     }
 }
 
-@media (max-width: 600px) {
-    nav {
-        flex-direction: column;
-        padding: 10px;
+/* Animación sutil al cargar */
+@keyframes subtleAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-    nav ul {
-        justify-content: center;
-        margin-top: 10px;
-    }
+.documentos-section > div {
+    animation: subtleAppear 0.5s ease forwards;
+}
 
-    .img-logoIPS {
-        margin-bottom: 10px;
-    }
+.documentos-section > div:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.documentos-section > div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+/* Estilo para el primer div (Convocatoria) */
+.documentos-section > div:first-child {
+    text-align: center;
+    background: linear-gradient(135deg, #f9fbf9 0%, #ffffff 100%);
+}
+
+.documentos-section > div:first-child a {
+    justify-content: center;
+    background: linear-gradient(135deg, #0A5F36, #639A33);
+    color: white;
+    font-weight: 500;
+    border-left: none;
+    padding: 16px 30px;
+    margin: 10px 0;
+}
+
+.documentos-section > div:first-child a:hover {
+    background: linear-gradient(135deg, #08482a, #4e7d30);
+    transform: scale(1.02);
+}
+
+.documentos-section > div:first-child a::before {
+    content: '📢';
+    font-size: 1.2rem;
 }
