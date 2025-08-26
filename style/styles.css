@@ -1201,6 +1201,298 @@ main {
     box-shadow: 0 5px 15px rgba(10, 95, 54, 0.3);
 }
 
+
+
+
+
+
+
+/* ESTILOS MEJORADOS PARA FORMULARIO */
+section {
+    padding: 60px 5%;
+    background: linear-gradient(135deg, rgba(248, 251, 247, 0.8) 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+.form-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(10, 95, 54, 0.12);
+    min-height: 550px;
+}
+
+.form-container form {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.form-group:first-child {
+    margin-top: 0;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    padding: 14px 16px;
+    border: 2px solid #e0efe0;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background: #f9fbf9;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15);
+    background: white;
+    transform: translateY(-2px);
+}
+
+.form-container input::placeholder,
+.form-container textarea::placeholder {
+    color: #88aa88;
+    opacity: 0.8;
+}
+
+.form-container textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #4caf50;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    color: #0A5F36;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.checkbox-group:hover label {
+    color: #4caf50;
+}
+
+.form-container button {
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    color: white;
+    border: none;
+    padding: 16px 30px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.form-container button:hover::before {
+    left: 100%;
+}
+
+.form-container button:hover {
+    background: linear-gradient(135deg, #43a047, #2e7d32);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+}
+
+.form-container button:active {
+    transform: translateY(-1px);
+}
+
+
+/* Estilos para el campo PQRS con animación */
+.pqrs-field {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+/* Cuando el campo está visible */
+.pqrs-field[style*="display: flex"] {
+    opacity: 1;
+    transform: translateY(0);
+    margin-bottom: 20px;
+}
+
+/* Estilo especial para el select de PQRS cuando está visible */
+.pqrs-field select {
+    border-left: 4px solid #4caf50;
+    background: linear-gradient(135deg, #f1f8e9, #e8f5e9);
+}
+
+/* Loading state para el botón */
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+
+/* Estilo para la imagen - Mismo tamaño que el formulario */
+.form-image {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.form-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+    background: linear-gradient(90deg, #0A5F36, #639A33);
+}
+
+.form-image:hover img {
+    transform: scale(1.05);
+}
+
+
+
+
+/* Efectos de animación para los campos */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea,
+.form-container button {
+    animation: slideIn 0.5s ease forwards;
+}
+
+.form-container input:nth-child(1) { animation-delay: 0.1s; }
+.form-container input:nth-child(2) { animation-delay: 0.2s; }
+.form-container select:nth-child(1) { animation-delay: 0.3s; }
+.form-container select:nth-child(2) { animation-delay: 0.4s; }
+.form-container textarea { animation-delay: 0.5s; }
+.form-container button { animation-delay: 0.6s; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .form-container {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        min-height: auto;
+    }
+    
+    .form-image {
+        height: 300px;
+        order: -1;
+    }
+    
+    .form-container form {
+        padding: 30px 25px;
+    }
+    
+    .form-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    section {
+        padding: 40px 15px;
+    }
+    
+    .form-container {
+        border-radius: 15px;
+    }
+    
+    .form-container form {
+        padding: 25px 20px;
+    }
+    
+    .form-container input,
+    .form-container select,
+    .form-container textarea {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+    }
+    
+    .form-container button {
+        padding: 14px 25px;
+        font-size: 1rem;
+    }
+}
+
+/* Validación visual */
+.form-container input:invalid:not(:placeholder-shown) {
+    border-color: #f44336;
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1);
+}
+
+.form-container input:valid:not(:placeholder-shown) {
+    border-color: #4caf50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+
+
+
+
+
+
+
 /* Pie de pagina */
 footer {
     background: linear-gradient(to right, #0A5F36, #639A33);

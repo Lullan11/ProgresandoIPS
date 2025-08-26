@@ -146,14 +146,14 @@
         <section class="resultados">
             <div class="resultados-container">
                 <div class="resultados-image">
-                    <img src="img/Resultados.png"
-                        alt="Resultados de exámenes">
+                    <img src="img/Resultados.png" alt="Resultados de exámenes">
                 </div>
 
                 <h2>Resultados de tus Exámenes</h2>
                 <p>Consulta los resultados de tus exámenes médicos de manera segura, documentos de la IPS, PQRS.</p>
 
-                <a href="https://progresandoweb.com/index.php/login" target="_blank" class="resultados-btn">Consultar Resultados</a>
+                <a href="https://progresandoweb.com/index.php/login" target="_blank" class="resultados-btn">Consultar
+                    Resultados</a>
             </div>
 
             <div class="resultado-decorativo">📋</div>
@@ -360,9 +360,60 @@
         </section>
 
 
+        <!-- formulario -->
         <section>
-            <h2>Centro de reconocimiento de conductores</h2>
-            <h2></h2>
+            <div class="form-container">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="number" name="telefono" placeholder="Teléfono" required>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="pqrs-checkbox" name="es_pqrs">
+                        <label for="pqrs-checkbox">PQRS</label>
+                    </div>
+
+                    <!-- Campo que se mostrará solo cuando PQRS esté seleccionado -->
+                    <div class="form-group pqrs-field" style="display: none;">
+                        <select id="pqrs-type" name="tipo_pqrs">
+                            <option value="">Seleccione un tipo de PQRS</option>
+                            <option value="peticion">Petición</option>
+                            <option value="queja">Queja</option>
+                            <option value="reclamo">Reclamo</option>
+                            <option value="sugerencia">Sugerencia</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <select name="tipo_usuario" required>
+                            <option value="">Tipo de usuario</option>
+                            <option value="natural">Natural</option>
+                            <option value="juridico">Jurídico</option>
+                        </select>
+
+                        <select name="tipo_servicio" required>
+                            <option value="">Tipo de servicio</option>
+                            <option value="soporte">Soporte</option>
+                            <option value="facturacion">Facturación</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea name="mensaje" placeholder="Mensaje"></textarea>
+                    </div>
+
+                    <button type="submit">Enviar mensaje</button>
+                </form>
+
+                <div class="form-image">
+                    <img src="img/fotoForm.png" alt="Atención al cliente">
+                </div>
+            </div>
         </section>
     </main>
 
@@ -371,6 +422,8 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/formulario.js"></script>
+
 
 
     <!-- Integración de Dialogflow Messenger -->
