@@ -23,9 +23,9 @@
                 <li><a href="#quieneSomos">Quiénes somos</a></li>
                 <li><a href="#sedes">Sedes</a></li>
                 <li><a href="#ofrecemos">Servicios</a></li>
-                <li><a href="index.html">No se</a></li>
+                <li><a href="index.html">CRC y Porte de armas</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-                <li><a href="documentos.html">Documentos IPS</a></li>
+                <li><a href="documentos.html">Documentos</a></li>
                 <li><a href="https://progresandoweb.com/index.php/login" class="progressando-btn"
                         target="_blank">Progresando Web</a></li>
             </ul>
@@ -415,6 +415,28 @@
             </div>
         </section>
 
+        <!-- seccion porcentaje -->
+        <section class="stats-section">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="9000">0</div>
+                    <div class="stat-text">empresas clientes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="10">0</div>
+                    <div class="stat-text">años de experiencia</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="300">0</div>
+                    <div class="stat-text">pacientes - capacidad diaria</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="30">0</div>
+                    <div class="stat-text">servicios ofrecidos</div>
+                </div>
+            </div>
+        </section>
+
         <!-- formulario -->
         <section>
             <div id="contacto" class="section-header">
@@ -489,6 +511,54 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/formulario.js"></script>
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Configuración de la animación
+            const counterElements = document.querySelectorAll('.stat-number');
+
+            // Función para animar los contadores
+            function animateCounters() {
+                counterElements.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const duration = 2000; // 2 segundos
+                    const increment = target / (duration / 16); // 60fps
+                    let count = 0;
+
+                    const updateCount = () => {
+                        count += increment;
+                        if (count < target) {
+                            counter.textContent = Math.floor(count).toLocaleString();
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            counter.textContent = target.toLocaleString();
+                            // Añadir el signo + solo a los números que lo necesitan
+                            if (target === 9000 || target === 300 || target === 30) {
+                                counter.innerHTML = `<span class="plus-sign">+</span>${target.toLocaleString()}`;
+                            }
+                        }
+                    };
+
+                    updateCount();
+                });
+            }
+
+            // Activar la animación cuando el elemento es visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(document.querySelector('.stats-section'));
+        });
+    </script>
 
 
 

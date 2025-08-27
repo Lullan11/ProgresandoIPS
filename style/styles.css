@@ -102,7 +102,7 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 10px;
     margin: 0;
     padding: 0;
 }
@@ -925,7 +925,7 @@ main {
 /* Servicios SECTION */
 /* HERO SECTION */
 .servicios-hero {
-    height: 70vh;
+    height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1217,9 +1217,12 @@ main {
 }
 
 .mapa-container {
-    flex: 0.7; /* Reducir el factor de flexión */
-    max-width: 400px; /* Añadir un ancho máximo */
-    min-width: 250px; /* Reducir el ancho mínimo */
+    flex: 0.7;
+    /* Reducir el factor de flexión */
+    max-width: 400px;
+    /* Añadir un ancho máximo */
+    min-width: 250px;
+    /* Reducir el ancho mínimo */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1274,6 +1277,135 @@ main {
 }
 
 
+
+/* ESTILO PARA PREVENIR SCROLL HORIZONTAL */
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.stats-section {
+    background: linear-gradient(135deg, #0A5F36 0%, #639A33 100%);
+    color: white;
+    padding: 100px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.stat-item {
+    padding: 15px;
+    /* Aseguramos que no cause overflow */
+    max-width: 100%;
+}
+
+.stat-number {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    /* Prevenir que el texto cause overflow */
+    word-wrap: break-word;
+}
+
+.stat-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.95);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    /* Prevenir que el texto cause overflow */
+    word-wrap: break-word;
+}
+
+.plus-sign {
+    display: inline-block;
+    margin-right: 4px;
+    font-weight: 600;
+}
+
+/* Separadores entre elementos */
+.stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .stats-container {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 992px) {
+    .stats-container {
+        gap: 40px;
+    }
+
+    .stat-item:not(:last-child)::after {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-section {
+        padding: 60px 20px;
+    }
+
+    .stats-container {
+        gap: 30px;
+    }
+
+    .stat-number {
+        font-size: 42px;
+    }
+
+    .stat-text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-container {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .stat-number {
+        font-size: 38px;
+    }
+
+    body {
+        padding: 10px;
+    }
+
+    .stats-section {
+        padding: 50px 15px;
+    }
+}
 
 
 
