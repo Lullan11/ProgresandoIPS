@@ -360,12 +360,71 @@
         </section>
 
 
+        <!-- seccion aliados -->
+        <section class="aliados-section">
+            <div class="section-header">
+                <h2>ALIADOS ESTRATÉGICOS A NIVEL NACIONAL</h2>
+                <p>Contamos con una amplia red de colaboradores en Colombia</p>
+            </div>
+
+            <div class="aliados-content">
+                <div class="mapa-container">
+                    <img src="img/mapa.png" alt="Mapa de Colombia con ubicación de aliados">
+                </div>
+
+                <div class="ciudades-container">
+                    <div class="ciudades-grid">
+                        <div class="ciudad-item">Cali</div>
+                        <div class="ciudad-item">Medellín</div>
+                        <div class="ciudad-item">Barranquilla</div>
+                        <div class="ciudad-item">Bogotá</div>
+                        <div class="ciudad-item">Bucaramanga</div>
+                        <div class="ciudad-item">Funza</div>
+                        <div class="ciudad-item">Mosquera</div>
+                        <div class="ciudad-item">Madrid</div>
+                        <div class="ciudad-item">Cajicá</div>
+                        <div class="ciudad-item">Aguachica</div>
+                        <div class="ciudad-item">Arauca</div>
+                        <div class="ciudad-item">Armenia</div>
+                        <div class="ciudad-item">Barrancabermeja</div>
+                        <div class="ciudad-item">Cartagena</div>
+                        <div class="ciudad-item">Dorada Caldas</div>
+                        <div class="ciudad-item">Florencia</div>
+                        <div class="ciudad-item">Ibagué</div>
+                        <div class="ciudad-item">Manizales</div>
+                        <div class="ciudad-item">Montería</div>
+                        <div class="ciudad-item">Neiva</div>
+                        <div class="ciudad-item">Palmira</div>
+                        <div class="ciudad-item">Pasto</div>
+                        <div class="ciudad-item">Pereira</div>
+                        <div class="ciudad-item">Popayán</div>
+                        <div class="ciudad-item">Riohacha</div>
+                        <div class="ciudad-item">Sanbana de Torres</div>
+                        <div class="ciudad-item">San Alberto</div>
+                        <div class="ciudad-item">Sangil</div>
+                        <div class="ciudad-item">Santa Marta</div>
+                        <div class="ciudad-item">Sincelejo</div>
+                        <div class="ciudad-item">Socorro</div>
+                        <div class="ciudad-item">Sogamoso</div>
+                        <div class="ciudad-item">Tunja</div>
+                        <div class="ciudad-item">Valledupar</div>
+                        <div class="ciudad-item">Villavicencio</div>
+                        <div class="ciudad-item">Yopal</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- formulario -->
         <section>
+            <div id="contacto" class="section-header">
+                <h2>Contáctanos</h2>
+            </div>
             <div class="form-container">
                 <form id="contactForm">
                     <div class="form-group">
                         <input type="text" name="nombre" placeholder="Nombre" required>
+                        <input type="number" name="CC" placeholder="Documento / Cédula" required>
                     </div>
 
                     <div class="form-group">
@@ -390,10 +449,10 @@
                     </div>
 
                     <div class="form-group">
-                        <select name="tipo_usuario" required>
+                        <select id="tipo_usuario" name="tipo_usuario" required>
                             <option value="">Tipo de usuario</option>
-                            <option value="natural">Natural</option>
-                            <option value="juridico">Jurídico</option>
+                            <option value="Empresa">Empresa</option>
+                            <option value="Particular">Particular</option>
                         </select>
 
                         <select name="tipo_servicio" required>
@@ -403,12 +462,18 @@
                         </select>
                     </div>
 
+                    <!-- Nombre de la empresa (solo si tipo_usuario = Empresa) -->
+                    <div class="form-group" id="empresaField" style="display:none;">
+                        <input type="text" name="empresa" placeholder="Nombre de la empresa">
+                    </div>
+
                     <div class="form-group">
                         <textarea name="mensaje" placeholder="Mensaje"></textarea>
                     </div>
 
                     <button type="submit">Enviar mensaje</button>
                 </form>
+
 
                 <div class="form-image">
                     <img src="img/fotoForm.png" alt="Atención al cliente">
@@ -421,6 +486,7 @@
         <p>&copy; 2025 IPS Progresando en salud SAS. Todos los derechos reservados.</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/formulario.js"></script>
 
