@@ -13,12 +13,20 @@
 <body>
 
     <div class="pequeño-header">
-        <p><strong><em>CON NOSOTROS TU SALUD SIEMPRE ESTA SEGURA</em></strong></p>
+        <p><strong><em>CON NOSOTROS TU SALUD ESTA SEGURA</em></strong></p>
     </div>
 
     <header>
         <nav>
             <img class="img-logoIPS" src="img/LOGOIPS.png" alt="Logo IPS">
+
+            <!-- Botón Hamburguesa - Asegúrate de que esté en esta posición -->
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="#quieneSomos">Quiénes somos</a></li>
@@ -30,6 +38,9 @@
                 <li><a href="https://progresandoweb.com/index.php/login" class="progressando-btn"
                         target="_blank">Progresando Web</a></li>
             </ul>
+
+            <!-- Overlay para cerrar el menú al hacer clic fuera -->
+            <div class="overlay-menu"></div>
         </nav>
     </header>
 
@@ -38,30 +49,32 @@
         <section data-animacion="volteo" class="hero-section" id="inicio">
             <div class="hero-container">
                 <div class="hero-text">
-                    <h1>Bienvenidos a Progresando en Salud</h1>
-                    <p>En <strong>Progresando en salud</strong>, nos dedicamos a brindar atención médica de calidad y
+                    <h1 class="fade-in">Bienvenidos a Progresando en Salud</h1>
+                    <p class="slide-in-left delay-1">En <strong>Progresando en salud</strong>, nos dedicamos a brindar
+                        atención médica de calidad y
                         servicios de salud integrales para toda la familia.</p>
-                    <p>Ofrecemos una amplia gama de servicios, desde consultas médicas generales hasta especialidades,
+                    <p class="slide-in-left delay-1">Ofrecemos una amplia gama de servicios, desde consultas médicas
+                        generales hasta especialidades,
                         exámenes diagnósticos y programas de prevención.</p>
                     <div class="hero-features">
                         <div class="feature">
                             <i class="fas fa-user-md"></i>
-                            <span>Profesionales calificados</span>
+                            <span class="fade-in">Profesionales calificados</span>
                         </div>
                         <div class="feature">
                             <i class="fas fa-heartbeat"></i>
-                            <span>Atención integral</span>
+                            <span class="slide-in-left delay-1">Atención integral</span>
                         </div>
                         <div class="feature">
                             <i class="fas fa-clock"></i>
-                            <span>Horarios flexibles</span>
+                            <span class="slide-in-left delay-1">Horarios flexibles</span>
                         </div>
                     </div>
                     <div class="hero-buttons">
                         <a href="#video" class="btn-leer-mas">Leer más</a>
                     </div>
                 </div>
-                <div class="hero-image">
+                <div class="hero-image fade-in">
                     <img src="img/EquipoNavidad.jpeg" alt="Profesionales de salud en Progresando en Salud">
                     <div class="image-overlay">
                         <h3>10 años de experiencia</h3>
@@ -97,23 +110,27 @@
         <section id="quieneSomos" class="sobre-nosotros">
             <div class="contenedor-seccion">
                 <div class="texto">
-                    <h2>QUIÉNES SOMOS</h2>
-                    <p>SOMOS un grupo especializado en prestar servicios de seguridad y salud en el trabajo,
+                    <h2 class="fade-in">QUIÉNES SOMOS</h2>
+                    <p class="slide-in-left delay-1">SOMOS un grupo especializado en prestar servicios de seguridad y
+                        salud en el trabajo,
                         fundamentados en la prevención de enfermedades y accidentes laborales...</p>
 
-                    <h2>MISIÓN</h2>
-                    <p>Somos una empresa especializada en servicios de salud ocupacional, orientados a la seguridad y
+                    <h2 class="fade-in">MISIÓN</h2>
+                    <p class="slide-in-left delay-1">Somos una empresa especializada en servicios de salud ocupacional,
+                        orientados a la seguridad y
                         salud en el trabajo mediante procesos confiables y seguros...</p>
 
-                    <h2>VISIÓN</h2>
-                    <p>Posicionarnos como una empresa líder en la prestación de servicios de seguridad and salud en el
+                    <h2 class="fade-in">VISIÓN</h2>
+                    <p class="slide-in-left delay-1">Posicionarnos como una empresa líder en la prestación de servicios
+                        de seguridad and salud en el
                         trabajo, a través de la calidad...</p>
 
-                    <h2>VALORES</h2>
-                    <p>Compromiso, Ética, Integridad, Eficiencia, Respeto y Trabajo en Equipo.</p>
+                    <h2 class="fade-in">VALORES</h2>
+                    <p class="slide-in-left delay-1">Compromiso, Ética, Integridad, Eficiencia, Respeto y Trabajo en
+                        Equipo.</p>
                 </div>
 
-                <div class="carrusel-container">
+                <div class="carrusel-container fade-in">
                     <div class="carrusel">
                         <div class="carrusel-slide active">
                             <img src="img/1.jpg" alt="Imagen 1">
@@ -146,7 +163,7 @@
 
         <section class="resultados">
             <div class="resultados-container">
-                <div class="resultados-image">
+                <div class="resultados-image fade-in">
                     <img src="img/Resultados.png" alt="Resultados de exámenes">
                 </div>
 
@@ -167,11 +184,11 @@
         <!-- SEDES SECTION -->
         <section class="sedes-section" id="sedesSection">
             <div class="section-header">
-                <h2>Nuestras Sedes</h2>
-                <p>Conoce nuestras sedes y horarios de atención</p>
+                <h2 class="slide-in-left delay-1">Nuestras Sedes</h2>
+                <p class="slide-in-left delay-1">Conoce nuestras sedes y horarios de atención</p>
             </div>
 
-            <div class="sedes-grid">
+            <div class="sedes-grid fade-in">
                 <!-- Sede 1 -->
                 <div class="sede-card">
                     <div class="sede-icon">
@@ -362,7 +379,7 @@
 
 
         <!-- seccion aliados -->
-        <section class="aliados-section">
+        <section class="aliados-section slide-in-left delay-1">
             <div class="section-header">
                 <h2>ALIADOS ESTRATÉGICOS A NIVEL NACIONAL</h2>
                 <p>Contamos con una amplia red de colaboradores en Colombia</p>
@@ -420,19 +437,19 @@
         <section class="stats-section">
             <div class="stats-container">
                 <div class="stat-item">
-                    <div class="stat-number" data-target="9000">0</div>
+                    <div class="stat-number fade-in" data-target="9000">0</div>
                     <div class="stat-text">empresas clientes</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-target="10">0</div>
+                    <div class="stat-number fade-in" data-target="10">0</div>
                     <div class="stat-text">años de experiencia</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-target="290">0</div>
+                    <div class="stat-number fade-in" data-target="290">0</div>
                     <div class="stat-text">pacientes - capacidad diaria</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-target="30">0</div>
+                    <div class="stat-number fade-in" data-target="30">0</div>
                     <div class="stat-text">servicios ofrecidos</div>
                 </div>
             </div>
@@ -440,7 +457,7 @@
 
         <!-- seccion telefonos contacto -->
         <section class="telefono-section">
-            <div class="telefono-image">
+            <div class="telefono-image slide-in-left delay-1">
                 <img src="img/telefonos.jpeg" alt="Teléfonos de contacto">
             </div>
         </section>
@@ -448,7 +465,7 @@
         <hr class="otro" id="otros">
 
         <!-- seccion iamgenes -->
-        <div class="imagenes-cuadradas">
+        <div class="imagenes-cuadradas fade-in">
             <div class="imagen-wrapper">
                 <img src="img/conduccion.jpeg" alt="">
             </div>
@@ -531,7 +548,7 @@
 
     <footer>
         <div class="footer-container">
-            <div class="footer-content">
+            <div class="footer-content fade-in">
                 <!-- Columna 1: Información de contacto -->
                 <div class="footer-column">
                     <div class="footer-logo">
@@ -610,7 +627,7 @@
                 </div>
             </div>
 
-            <div class="footer-bottom">
+            <div class="footer-bottom slide-in-left delay-1">
                 <div class="footer-bottom-content">
                     <p>&copy; 2025 IPS Progresando en Salud SAS. Todos los derechos reservados.</p>
                     <div class="legal-links">
@@ -626,17 +643,11 @@
     </footer>
 
 
-
-    <!-- Ejemplos -->
-    <h2 class="fade-in">Título con animación</h2>
-    <p class="slide-in-left delay-1">Texto que se desliza desde la izquierda</p>
-    <div class="servicio-card zoom-in delay-2">Tarjeta con efecto zoom</div>
-    <a href="#" class="btn-leer-mas rotate-in">Botón con rotación</a>
-
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/formulario.js"></script>
     <script src="js/animaciones.js"></script>
+    <script src="js/menu.js"></script>
 
 
 

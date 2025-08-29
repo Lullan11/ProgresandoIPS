@@ -14,12 +14,19 @@
 
 <body>
     <div class="pequeño-header">
-        <p><strong><em>CON NOSOTROS TU SALUD SIEMPRE ESTA SEGURA</em></strong></p>
+        <p><strong><em>CON NOSOTROS TU SALUD ESTA SEGURA</em></strong></p>
     </div>
-
     <header>
         <nav>
             <img class="img-logoIPS" src="img/LOGOIPS.png" alt="Logo IPS">
+
+            <!-- Botón Hamburguesa - Asegúrate de que esté en esta posición -->
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+ 
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="index.html#quieneSomos">Quiénes somos</a></li>
@@ -31,8 +38,12 @@
                 <li><a href="https://progresandoweb.com/index.php/login" class="progressando-btn"
                         target="_blank">Progresando Web</a></li>
             </ul>
+
+            <!-- Overlay para cerrar el menú al hacer clic fuera -->
+            <div class="overlay-menu"></div>
         </nav>
     </header>
+    
 
     <div class="section-header">
         <h2>Documentos</h2>
@@ -165,6 +176,7 @@
         </div>
     </footer>
     <script src="js/script.js"></script>
+    <script src="js/menu.js"></script>
 
     <script>
         // JavaScript para el efecto de sombra al hacer scroll
