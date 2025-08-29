@@ -2653,3 +2653,72 @@ header.scrolled {
         padding: 40px 15px;
     }
 }
+
+/* CORRECCIONES PARA MÓVIL - FORMULARIO E IMÁGENES */
+
+@media (max-width: 900px) {
+  /* CORRECCIÓN PARA FORMULARIO EN MÓVIL */
+  .form-container form {
+    overflow: hidden;
+  }
+  
+  .form-group {
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .form-container input,
+  .form-container select,
+  .form-container textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  /* Asegurar que los campos no se salgan */
+  .form-container {
+    overflow: hidden;
+  }
+  
+  /* CORRECCIÓN PARA IMÁGENES CRC Y PORTE DE ARMAS */
+  .imagenes-cuadradas {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .imagen-wrapper {
+    width: 100%;
+    height: 50vh; /* Ajuste para que se vean completas */
+    min-height: 300px;
+    aspect-ratio: unset; /* Anular la relación de aspecto cuadrada */
+  }
+  
+  .imagen-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio */
+  }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .imagen-wrapper {
+    height: 40vh;
+    min-height: 250px;
+  }
+  
+  .form-container {
+    margin: 0 10px;
+  }
+  
+  .form-container form {
+    padding: 20px 15px;
+  }
+}
+@media (min-width: 1200px) {
+    .footer-bottom-content {
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
