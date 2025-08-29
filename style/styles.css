@@ -372,7 +372,7 @@ main {
     z-index: 0;
     transform: translateX(-50%);
     object-fit: cover;
-    object-position: center 30%;
+    object-position: center 60%;
 }
 
 .video-section .overlay {
@@ -2305,10 +2305,14 @@ header.scrolled {
     padding: 0;
     z-index: 1002;
     margin-right: 15px;
-    position: absolute; /* Cambiado a posición absoluta */
-    left: 15px; /* Posicionado a la izquierda */
-    top: 50%; /* Centrado verticalmente */
-    transform: translateY(-50%); /* Ajuste de centrado vertical */
+    position: absolute;
+    /* Cambiado a posición absoluta */
+    left: 15px;
+    /* Posicionado a la izquierda */
+    top: 50%;
+    /* Centrado verticalmente */
+    transform: translateY(-50%);
+    /* Ajuste de centrado vertical */
 }
 
 .menu-toggle span {
@@ -2336,12 +2340,13 @@ header.scrolled {
 
 /* Media Query para dispositivos móviles - CORREGIDO */
 @media (max-width: 900px) {
+
     /* HEADER Y NAVEGACIÓN */
     header {
         height: auto;
         padding: 0;
     }
-    
+
     nav {
         display: flex;
         justify-content: space-between;
@@ -2350,24 +2355,30 @@ header.scrolled {
         height: 60px;
         position: relative;
     }
-    
+
     .img-logoIPS {
         max-height: 45px;
         z-index: 1003;
-        margin-left: 45px; /* Aumentado para compensar el menú a la izquierda */
+        margin-left: 45px;
+        /* Aumentado para compensar el menú a la izquierda */
     }
-    
+
     /* Botón hamburguesa visible y bien posicionado */
     .menu-toggle {
         display: flex;
-        position: absolute; /* Mantener posición absoluta */
+        position: absolute;
+        /* Mantener posición absoluta */
         z-index: 1004;
-        left: 15px; /* Posicionado a la izquierda */
-        top: 50%; /* Centrado verticalmente */
-        transform: translateY(-50%); /* Ajuste de centrado vertical */
-        margin: 0; /* Eliminar margen anterior */
+        left: 15px;
+        /* Posicionado a la izquierda */
+        top: 50%;
+        /* Centrado verticalmente */
+        transform: translateY(-50%);
+        /* Ajuste de centrado vertical */
+        margin: 0;
+        /* Eliminar margen anterior */
     }
-    
+
     /* Menú lateral que se desliza desde la izquierda */
     nav ul {
         position: fixed;
@@ -2379,7 +2390,8 @@ header.scrolled {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        padding: 100px 20px 40px; /* Aumentado padding-top para bajar las opciones */
+        padding: 100px 20px 40px;
+        /* Aumentado padding-top para bajar las opciones */
         transition: left 0.4s ease;
         z-index: 1001;
         box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
@@ -2406,7 +2418,7 @@ header.scrolled {
         box-sizing: border-box;
         color: #333;
     }
-    
+
     nav li a:hover {
         background-color: #f9f9f9;
         color: #0A5F36;
@@ -2430,7 +2442,7 @@ header.scrolled {
         opacity: 1;
         visibility: visible;
     }
-    
+
     /* Ajustar el botón Progresando Web en móviles */
     nav li a.progressando-btn {
         margin: 15px 0;
@@ -2440,7 +2452,7 @@ header.scrolled {
         color: white !important;
         border-radius: 5px;
     }
-    
+
     nav li a.progressando-btn:hover {
         background: #639A33;
         color: white !important;
@@ -2448,7 +2460,8 @@ header.scrolled {
 
     /* Ajustar el contenido principal para el header fijo */
     main {
-        margin-top: 93px; /* 33px (pequeño-header) + 60px (nav) */
+        margin-top: 93px;
+        /* 33px (pequeño-header) + 60px (nav) */
     }
 
     /* Pequeño header */
@@ -2460,102 +2473,104 @@ header.scrolled {
         align-items: center;
         justify-content: center;
     }
-    
+
     /* SECCIÓN DE VIDEO - OCULTAR VIDEO EN MÓVILES Y MOSTRAR SOLO TEXTO */
     .video-section {
         height: auto;
         min-height: 50vh;
         padding: 20px 0;
-        background: linear-gradient(135deg, #0A5F36 0%, #639A33 100%); /* Fondo similar al overlay */
+        background: linear-gradient(135deg, #0A5F36 0%, #639A33 100%);
+        /* Fondo similar al overlay */
     }
-    
+
     .video-section video {
-        display: none; /* Ocultar video en móviles */
+        display: none;
+        /* Ocultar video en móviles */
     }
-    
+
     .video-section .overlay {
         position: relative;
         height: auto;
         background: transparent;
     }
-    
+
     .video-section .video-content {
         position: relative;
         padding: 60px 20px 40px;
         z-index: 2;
     }
-    
+
     .video-section h1 {
         font-size: 1.8rem;
         margin-bottom: 20px;
     }
-    
+
     .video-section p {
         font-size: 1rem;
         line-height: 1.5;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
     }
-    
+
     /* IMÁGENES CRC Y ARMAS - CORRECCIÓN PARA MÓVILES */
     .imagenes-cuadradas {
         flex-direction: column;
         height: auto;
     }
-    
+
     .imagen-wrapper {
         aspect-ratio: 16/9;
         width: 100%;
     }
-    
+
     /* HERO SECTION - AJUSTES PARA MÓVILES */
     .hero-container {
         flex-direction: column-reverse;
     }
-    
+
     .hero-text {
         padding: 30px 20px;
     }
-    
+
     .hero-text h1 {
         font-size: 2rem;
     }
-    
+
     .hero-image {
         min-height: 300px;
         flex: none;
     }
-    
+
     /* SECCIÓN SOBRE NOSOTROS - AJUSTES */
     .contenedor-seccion {
         flex-direction: column;
     }
-    
+
     .carrusel-container {
         max-width: 100%;
         height: 400px;
         margin: 20px 0;
     }
-    
+
     /* SECCIÓN DE SERVICIOS - AJUSTES */
     .servicios-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     /* SECCIÓN DE ALIADOS - AJUSTES */
     .aliados-content {
         flex-direction: column;
     }
-    
+
     .ciudades-grid {
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     }
-    
+
     /* FORMULARIO - AJUSTES */
     .form-container {
         grid-template-columns: 1fr;
     }
-    
+
     .form-image {
         height: 250px;
         order: -1;
@@ -2568,47 +2583,51 @@ header.scrolled {
         padding: 8px 10px;
         height: 55px;
     }
-    
+
     .img-logoIPS {
         max-height: 40px;
-        margin-left: 40px; /* Ajustado para compensar */
+        margin-left: 40px;
+        /* Ajustado para compensar */
     }
-    
+
     .menu-toggle {
-        left: 10px; /* Ajustado para pantallas pequeñas */
+        left: 10px;
+        /* Ajustado para pantallas pequeñas */
     }
-    
+
     nav ul {
         width: 250px;
-        padding: 90px 15px 30px; /* Más padding-top para bajar opciones */
+        padding: 90px 15px 30px;
+        /* Más padding-top para bajar opciones */
     }
-    
+
     main {
-        margin-top: 88px; /* 33px (pequeño-header) + 55px (nav) */
+        margin-top: 88px;
+        /* 33px (pequeño-header) + 55px (nav) */
     }
-    
+
     .video-section h1 {
         font-size: 1.5rem;
     }
-    
+
     .video-section p {
         font-size: 0.9rem;
     }
-    
+
     /* ESTADÍSTICAS */
     .stats-container {
         flex-direction: column;
         gap: 30px;
     }
-    
+
     .stat-item {
         padding: 10px;
     }
-    
+
     .stat-number {
         font-size: 36px;
     }
-    
+
     .stat-text {
         font-size: 14px;
     }
@@ -2617,23 +2636,24 @@ header.scrolled {
 /* Ajustes para tablets en orientación vertical */
 @media (min-width: 601px) and (max-width: 900px) and (orientation: portrait) {
     .video-section video {
-        display: block; /* Mostrar video en tablets */
+        display: block;
+        /* Mostrar video en tablets */
     }
-    
+
     .video-section {
         background: transparent;
         min-height: 50vh;
     }
-    
+
     .video-section .overlay {
         position: absolute;
         background: #60ac1ea8;
     }
-    
+
     .hero-container {
         flex-direction: row;
     }
-    
+
     .servicios-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -2644,11 +2664,11 @@ header.scrolled {
     .video-section {
         min-height: 100vh;
     }
-    
+
     nav ul {
         padding: 80px 15px 20px;
     }
-    
+
     .video-section .video-content {
         padding: 40px 15px;
     }
@@ -2657,68 +2677,199 @@ header.scrolled {
 /* CORRECCIONES PARA MÓVIL - FORMULARIO E IMÁGENES */
 
 @media (max-width: 900px) {
-  /* CORRECCIÓN PARA FORMULARIO EN MÓVIL */
-  .form-container form {
-    overflow: hidden;
-  }
-  
-  .form-group {
-    flex-direction: column;
-    margin-bottom: 15px;
-  }
-  
-  .form-container input,
-  .form-container select,
-  .form-container textarea {
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-  }
-  
-  /* Asegurar que los campos no se salgan */
-  .form-container {
-    overflow: hidden;
-  }
-  
-  /* CORRECCIÓN PARA IMÁGENES CRC Y PORTE DE ARMAS */
-  .imagenes-cuadradas {
-    flex-direction: column;
-    height: auto;
-  }
-  
-  .imagen-wrapper {
-    width: 100%;
-    height: 50vh; /* Ajuste para que se vean completas */
-    min-height: 300px;
-    aspect-ratio: unset; /* Anular la relación de aspecto cuadrada */
-  }
-  
-  .imagen-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asegura que la imagen cubra todo el espacio */
-  }
+
+    /* CORRECCIÓN PARA FORMULARIO EN MÓVIL */
+    .form-container form {
+        overflow: hidden;
+    }
+
+    .form-group {
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    .form-container input,
+    .form-container select,
+    .form-container textarea {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+    /* Asegurar que los campos no se salgan */
+    .form-container {
+        overflow: hidden;
+    }
+
+    /* CORRECCIÓN PARA IMÁGENES CRC Y PORTE DE ARMAS */
+    .imagenes-cuadradas {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .imagen-wrapper {
+        width: 100%;
+        height: 50vh;
+        /* Ajuste para que se vean completas */
+        min-height: 300px;
+        aspect-ratio: unset;
+        /* Anular la relación de aspecto cuadrada */
+    }
+
+    .imagen-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Asegura que la imagen cubra todo el espacio */
+    }
 }
 
 /* Ajustes adicionales para pantallas muy pequeñas */
 @media (max-width: 480px) {
-  .imagen-wrapper {
-    height: 40vh;
-    min-height: 250px;
-  }
-  
-  .form-container {
-    margin: 0 10px;
-  }
-  
-  .form-container form {
-    padding: 20px 15px;
-  }
+    .imagen-wrapper {
+        height: 40vh;
+        min-height: 250px;
+    }
+
+    .form-container {
+        margin: 0 10px;
+    }
+
+    .form-container form {
+        padding: 20px 15px;
+    }
 }
+
 @media (min-width: 1200px) {
     .footer-bottom-content {
         justify-content: space-between;
         max-width: 1200px;
         margin: 0 auto;
     }
+}
+
+/* Media Queries para ajustar el video en diferentes pantallas */
+@media (min-width: 1920px) {
+
+    /* Pantallas muy grandes - recortar más */
+    .video-section video {
+        object-position: center 40%;
+    }
+}
+
+@media (max-width: 1366px) {
+
+    /* Pantallas laptop - ajuste estándar */
+    .video-section video {
+        object-position: center 30%;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    /* Tablets landscape - menos recorte */
+    .video-section video {
+        object-position: center 25%;
+    }
+
+    .video-section h1 {
+        font-size: 2rem;
+    }
+
+    .video-section p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Tablets portrait - ocultar video, mostrar solo fondo */
+    .video-section video {
+        display: none;
+    }
+
+    .video-section {
+        background: linear-gradient(135deg, #0A5F36 0%, #639A33 100%);
+        height: auto;
+        padding: 60px 0;
+    }
+
+    .video-section .overlay {
+        position: relative;
+        background: transparent;
+    }
+
+    .video-section h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Móviles - ajustes adicionales */
+    .video-section {
+        padding: 40px 0;
+    }
+
+    .video-section h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .video-section p {
+        font-size: 1rem;
+    }
+}
+
+/* Controles de prueba para ajustar el video */
+.video-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    z-index: 1000;
+    color: white;
+    display: none;
+    /* Oculto por defecto */
+}
+
+.video-controls.visible {
+    display: block;
+}
+
+.video-controls h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.control-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.control-btn {
+    padding: 8px 12px;
+    background: #639A33;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.show-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background: #0A5F36;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
