@@ -1234,80 +1234,210 @@ main {
     box-shadow: 0 5px 15px rgba(10, 95, 54, 0.3);
 }
 
+.aliados-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#map {
+    width: 600px;
+    height: 600px;
+    flex-shrink: 0;
+}
+
+.ciudades-container {
+    flex: 1;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.ciudad-item {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.ciudad-item.activa {
+    background: #639A33;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* ESTILOS RESPONSIVOS PARA LA SECCIÓN DE ALIADOS EN MÓVILES */
+@media (max-width: 768px) {
+    .aliados-section {
+        padding: 25px 15px;
+        margin: 20px auto;
+    }
+
+    .aliados-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .mapa-container {
+        width: 100%;
+        max-width: 100%;
+        order: 1;
+        /* El mapa va primero en móviles */
+        display: flex;
+        justify-content: center;
+    }
+
+    .mapa-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .ciudades-container {
+        width: 100%;
+        order: 2;
+        /* Las ciudades van después */
+        text-align: center;
+    }
+
+    .ciudades-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .ciudad-item {
+        text-align: center;
+        padding: 12px 8px;
+        font-size: 14px;
+    }
+}
+
+/* SECCIÓN ALIADOS - DISEÑO MEJORADO */
 .aliados-section {
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 60px auto;
     background: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(255, 255, 255);
+    padding: 40px 20px;
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+.aliados-section h2 {
+    color: #0A5F36;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.aliados-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0A5F36, #639A33);
+    border-radius: 2px;
+}
+
+.aliados-section>p {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
 }
 
 .aliados-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
 }
 
 .mapa-container {
-    flex: 0.7;
-    /* Reducir el factor de flexión */
-    max-width: 400px;
-    /* Añadir un ancho máximo */
-    min-width: 250px;
-    /* Reducir el ancho mínimo */
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
     display: flex;
-    align-items: center;
     justify-content: center;
-
+    align-items: center;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(10, 95, 54, 0.15);
+    transition: all 0.3s ease;
 }
 
+.mapa-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(10, 95, 54, 0.25);
+}
 
 .mapa-container img {
-    max-width: 80%;
+    width: 100%;
     height: auto;
-    border-radius: 6px;
-    box-shadow: 0 3px 10px rgba(255, 255, 255);
+    border-radius: 12px;
+    display: block;
 }
 
 .ciudades-container {
     flex: 1;
     min-width: 300px;
+    max-width: 600px;
+}
+
+.ciudades-container h3 {
+    color: #0A5F36;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+}
+
+.ciudades-container h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #0A5F36, #639A33);
+    border-radius: 2px;
 }
 
 .ciudades-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 12px;
+    gap: 15px;
+    justify-content: center;
 }
 
 .ciudad-item {
-    padding: 10px 12px;
-    background: #f8fafc;
-    border-radius: 6px;
-    border-left: 3px solid #639A33;
-    transition: all 0.2s ease;
-    font-size: 14px;
+    padding: 15px;
+    background: linear-gradient(135deg, #f8fbf7 0%, #f1f8ec 100%);
+    border-radius: 10px;
+    border-left: 4px solid #639A33;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: 500;
+    color: #0A5F36;
+    box-shadow: 0 4px 12px rgba(99, 154, 51, 0.1);
 }
 
 .ciudad-item:hover {
-    background: #e6f2ff;
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #e6f2e3 0%, #d9e9d4 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(99, 154, 51, 0.2);
+    border-left: 4px solid #0A5F36;
 }
 
-@media (max-width: 768px) {
-    .aliados-content {
-        flex-direction: column;
-    }
 
-    .ciudades-grid {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    }
-
-    .aliados-section {
-        padding: 25px;
-    }
-}
 
 
 
@@ -2872,34 +3002,4 @@ header.scrolled {
     cursor: pointer;
     z-index: 999;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.aliados-content {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-#map {
-    width: 600px;
-    height: 600px;
-    flex-shrink: 0;
-}
-
-.ciudades-container {
-    flex: 1;
-    max-height: 600px;
-    overflow-y: auto;
-}
-
-.ciudad-item {
-    padding: 5px;
-    border-bottom: 1px solid #ddd;
-    cursor: pointer;
-}
-
-.ciudad-item.activa {
-    background: #639A33;
-    color: white;
-    font-weight: bold;
 }
