@@ -2873,3 +2873,33 @@ header.scrolled {
     z-index: 999;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
+
+.aliados-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#map {
+    width: 600px;
+    height: 600px;
+    flex-shrink: 0;
+}
+
+.ciudades-container {
+    flex: 1;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.ciudad-item {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.ciudad-item.activa {
+    background: #639A33;
+    color: white;
+    font-weight: bold;
+}

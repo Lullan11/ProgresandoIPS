@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="style/styles.css">
     <link rel="icon" href="img/faviconn.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.awesome-markers/2.0.4/leaflet.awesome-markers.css">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.awesome-markers/2.0.4/leaflet.awesome-markers.js"></script>
+
 </head>
 
 <body>
@@ -72,6 +82,9 @@
                     </div>
                     <div class="hero-buttons">
                         <a href="#video" class="btn-leer-mas">Leer más</a>
+                        <a href="https://lullan11.github.io/COOPSERPROG.GitHub.io/" target="_blank"
+                            class="btn-leer-mas">COOPSERPROG</a>
+
                     </div>
                 </div>
                 <div class="hero-image fade-in">
@@ -383,50 +396,11 @@
             </div>
 
             <div class="aliados-content">
-                <div class="mapa-container">
-                    <img src="img/mapa.png" alt="Mapa de Colombia con ubicación de aliados">
-                </div>
+                <!-- 🔹 Mapa -->
+                <div id="map"></div>
 
-                <div class="ciudades-container">
-                    <div class="ciudades-grid">
-                        <div class="ciudad-item">Cali</div>
-                        <div class="ciudad-item">Medellín</div>
-                        <div class="ciudad-item">Barranquilla</div>
-                        <div class="ciudad-item">Bogotá</div>
-                        <div class="ciudad-item">Bucaramanga</div>
-                        <div class="ciudad-item">Funza</div>
-                        <div class="ciudad-item">Mosquera</div>
-                        <div class="ciudad-item">Madrid</div>
-                        <div class="ciudad-item">Cajicá</div>
-                        <div class="ciudad-item">Aguachica</div>
-                        <div class="ciudad-item">Arauca</div>
-                        <div class="ciudad-item">Armenia</div>
-                        <div class="ciudad-item">Barrancabermeja</div>
-                        <div class="ciudad-item">Cartagena</div>
-                        <div class="ciudad-item">Dorada Caldas</div>
-                        <div class="ciudad-item">Florencia</div>
-                        <div class="ciudad-item">Ibagué</div>
-                        <div class="ciudad-item">Manizales</div>
-                        <div class="ciudad-item">Montería</div>
-                        <div class="ciudad-item">Neiva</div>
-                        <div class="ciudad-item">Palmira</div>
-                        <div class="ciudad-item">Pasto</div>
-                        <div class="ciudad-item">Pereira</div>
-                        <div class="ciudad-item">Popayán</div>
-                        <div class="ciudad-item">Riohacha</div>
-                        <div class="ciudad-item">Sanbana de Torres</div>
-                        <div class="ciudad-item">San Alberto</div>
-                        <div class="ciudad-item">Sangil</div>
-                        <div class="ciudad-item">Santa Marta</div>
-                        <div class="ciudad-item">Sincelejo</div>
-                        <div class="ciudad-item">Socorro</div>
-                        <div class="ciudad-item">Sogamoso</div>
-                        <div class="ciudad-item">Tunja</div>
-                        <div class="ciudad-item">Valledupar</div>
-                        <div class="ciudad-item">Villavicencio</div>
-                        <div class="ciudad-item">Yopal</div>
-                    </div>
-                </div>
+                <!-- 🔹 Lista de ciudades -->
+                <div class="ciudades-container" id="lista-ciudades"></div>
             </div>
         </section>
 
@@ -684,9 +658,7 @@
     <script src="js/formulario.js"></script>
     <script src="js/animaciones.js"></script>
     <script src="js/menu.js"></script>
-
-
-
+    <script src="js/mapa.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
