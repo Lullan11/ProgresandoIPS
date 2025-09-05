@@ -20,10 +20,9 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           dangerous-clean-slate: true
           log-level: verbose
-          protocol: ftps
+          protocol: ftp
           timeout: 120000
-          local-dir: ./               # Carpeta de tu repo (html, css, js, etc.)
-          method: ftp                 # o ftps si tu servidor lo exige
+          local-dir: ./
           exclude: |
             **/.git*
             **/.github/*
