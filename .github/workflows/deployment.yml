@@ -1,0 +1,27 @@
+name: 🚀 Deploy via FTP
+
+on:
+  push:
+    branches:
+      - main   # Cambia si tu rama principal es diferente
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Deploy to FTP server
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /public_html/    # Carpeta de tu hosting donde va la web
+          local-dir: ./               # Carpeta de tu repo (html, css, js, etc.)
+          method: ftp                 # o ftps si tu servidor lo exige
+          exclude: |
+            **/.git*
+            **/.github/*
+            **/node_modules/**
