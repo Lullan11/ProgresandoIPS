@@ -24,8 +24,7 @@ jobs:
           timeout: 120000
           local-dir: ./
           exclude: |
-            **/.git*
-            **/.github/**
-            **/.github/**
+            **/.git*/**
             **/.gitignore
+            **/.github/**
             **/node_modules/**
