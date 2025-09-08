@@ -259,7 +259,7 @@ footer::before {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
-    padding: 60px 0 40px;
+    padding: 40px 0 40px;
     position: relative;
     z-index: 2;
 }
@@ -396,7 +396,7 @@ footer::before {
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 25px 0;
+    padding: 10px 0;
     position: relative;
     z-index: 2;
 }
