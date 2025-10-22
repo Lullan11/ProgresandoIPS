@@ -83,25 +83,21 @@ header {
     transition: top 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto de sombra cuando se hace scroll - SOLO AL HACER SCROLL */
-header.scrolled {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
-
 /* Navegación */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 11px 40px;
+
+    margin: 0 0;
+    padding: 11px 10px;
     width: 100%;
 }
 
 /* Logo */
 .img-logoIPS {
     max-height: 70px;
+    margin-left: 50px;
 }
 
 /* Menú */
